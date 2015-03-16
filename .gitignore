@@ -1,0 +1,18 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore secrets
+/config/database.yml
+/config/env_config.yml
+/config/secrets.yml
+
+.rspec
+.DS_Store
+.vagrant/
+dragonfly.log
+
+public/uploads

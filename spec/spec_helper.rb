@@ -17,6 +17,9 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+  config.color = true
+  config.tty = true
+  config.formatter = :documentation
 
   config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation

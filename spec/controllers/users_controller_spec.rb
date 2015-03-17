@@ -8,6 +8,7 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(:ok)
       user_json = JSON.parse(response.body)["user"]
       expect(user_json["email"]).to eq(email)
+      expect(user_json["team"]).to be_truthy
     end
 
     it "finds the User when it already exists" do

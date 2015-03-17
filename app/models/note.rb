@@ -5,9 +5,9 @@
 # 
 
 class Note < ActiveRecord::Base
-  validates :status, :message, presence: true
   belongs_to :team
   belongs_to :user
+  validates :status, :message, :user, presence: true
 
   before_create :assign_team
 

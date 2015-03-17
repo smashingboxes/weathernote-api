@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe UsersController, type: :controller do
-  describe "GET /users/" do
+  describe "GET /users" do
     it "creates a User when it doesn't exist yet" do
       email = attributes_for(:user)[:email]
       get :find_or_create, user: { email: email }, format: :json

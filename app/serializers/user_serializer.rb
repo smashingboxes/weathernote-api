@@ -1,5 +1,4 @@
-class UserSerializer < ActiveModel::Serializer
-  attributes :id, :email
-  has_one :team
-  has_many :notes
+class UserSerializer < NestedUserSerializer
+  has_one :team, serializer: NestedTeamSerializer
+  has_many :notes, serializer: NestedNoteSerializer
 end

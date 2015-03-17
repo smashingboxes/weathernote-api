@@ -18,6 +18,7 @@ RSpec.describe UsersController, type: :controller do
       user_json = JSON.parse(response.body)["user"]
       expect(user_json["id"]).to eq(user.id)
       expect(user_json["email"]).to eq(user.email)
+      expect(user_json["team"]["name"]).to eq(user.team.name)
     end
   end
 end

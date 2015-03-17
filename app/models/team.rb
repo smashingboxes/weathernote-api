@@ -1,5 +1,5 @@
 # DB Schema
-# table name: users
+# table name: teams
 # name                   :string
 
 class Team < ActiveRecord::Base

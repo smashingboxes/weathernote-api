@@ -3,7 +3,7 @@
 # email                   :string
 
 class User < ActiveRecord::Base
-  belongs_to :team
-  delegate :notes, to: :team
   validates :email, presence: true
+  belongs_to :team
+  has_many :notes
 end

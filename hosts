@@ -1,0 +1,9 @@
+[staging]
+45.55.137.232 app_env=staging app_branch=master
+
+[vagrant]
+192.168.13.37 ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+
+[omnibox:children]
+vagrant
+staging

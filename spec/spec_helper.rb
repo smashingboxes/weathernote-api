@@ -2,6 +2,11 @@ ENV['RAILS_ENV'] = 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 
+SmarfDoc.config do |c|
+  c.template_file = 'spec/support/template.md.erb'
+  c.output_file = 'spec/support/api_docs.md'
+end
+
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 
@@ -39,4 +44,12 @@ RSpec.configure do |config|
   end
 
   config.infer_spec_type_from_file_location!
+
+  RSpec.configure do |config|
+    config.after(:each, type: :controller) do
+      SmarfDoc.run!(request, response)
+    end
+
+    config.after(:suite) { SmarfDoc.finish! }
+  end
 end

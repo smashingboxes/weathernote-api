@@ -28,4 +28,5 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'smarf_doc', github: 'rickcarlino/smarf_doc'
 end

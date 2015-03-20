@@ -7,6 +7,12 @@ GIT
       activemodel (>= 3.2)
 
 GIT
+  remote: git://github.com/rickcarlino/smarf_doc.git
+  revision: 7c01c88e6d181993fd74ce1a01f3911849be2221
+  specs:
+    smarf_doc (0.0.1)
+
+GIT
   remote: git://github.com/smashingboxes/tape.git
   revision: f637650898bf22deea53577fcb609e4c5b585dc2
   tag: 0.2.2
@@ -196,6 +202,7 @@ DEPENDENCIES
   rails-api
   responders (~> 2.0)
   rspec-rails
+  smarf_doc!
   tape!
   thin
   unicorn

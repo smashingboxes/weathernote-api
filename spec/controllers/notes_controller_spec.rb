@@ -40,4 +40,15 @@ RSpec.describe NotesController, type: :controller do
       end
     end
   end
+
+  describe "GET /notes/:id" do
+    let(:note) { create(:note) }
+    it "renders the record" do
+      expected_response = JSON.parse(NoteSerializer.new(note).to_json)
+      get :show, id: note.id, format: :json
+      expect(response).to have_http_status(:ok)
+      returned_json = JSON.parse(response.body)
+      expect(returned_json).to eq(expected_response)
+    end
+  end
 end

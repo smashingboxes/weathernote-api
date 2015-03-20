@@ -4,6 +4,11 @@ class NotesController < ApplicationController
     respond_with @note, location: nil
   end
 
+  def show
+    @note = Note.find(params[:id])
+    respond_with @note
+  end
+
   private
 
   def note_params

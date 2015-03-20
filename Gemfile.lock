@@ -14,10 +14,9 @@ GIT
 
 GIT
   remote: git://github.com/smashingboxes/tape.git
-  revision: f637650898bf22deea53577fcb609e4c5b585dc2
-  tag: 0.2.2
+  revision: 5440a009a3ce88dfbd12a4cb5f5e81224c8a3387
   specs:
-    tape (0.1.5)
+    taperole (1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -203,7 +202,7 @@ DEPENDENCIES
   responders (~> 2.0)
   rspec-rails
   smarf_doc!
-  tape!
+  taperole!
   thin
   unicorn
   web-console (~> 2.0)

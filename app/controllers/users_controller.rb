@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   def find_or_create
     email = user_params[:email]
-    @user = User.where(email: email).first || User.create(email: email)
+    @user = User.find_or_create_by(email: email)
     respond_with @user
   end
 

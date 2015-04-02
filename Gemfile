@@ -10,7 +10,7 @@ gem 'pg'
 # Server
 gem 'unicorn'
 gem 'thin', group: :development
-gem 'taperole', github: "smashingboxes/tape"
+gem 'tape', github: 'smashingboxes/tape', tag: '0.2.2', group: :development
 
 # Generate fake names, addresses
 gem 'faker'

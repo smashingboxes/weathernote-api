@@ -1,14 +1,14 @@
 ### POST /notes.json
 
-* Params: {"note"=>{"status"=>"Delayed", "message"=>"Game is rescheduled for tomorrow", "user_id"=>3}, "format"=>"json", "controller"=>"notes", "action"=>"create"}
+* Params: {"note"=>{"status"=>"Rescheduled", "message"=>"Game's off", "user_id"=>8}, "format"=>"json", "controller"=>"notes", "action"=>"create"}
 * Response Status: 201
-* Response: {"note":{"id":2,"status":"Delayed","message":"Game is rescheduled for tomorrow","team":{"id":3,"name":"farmbureau"},"user":{"id":3,"email":"farmer@farmbureau.com"}}} 
+* Response: {"note":{"id":4,"status":"Rescheduled","message":"Game's off","team":{"id":7,"name":"farmbureau"},"user":{"id":8,"email":"farmer@farmbureau.com"}}} 
 
 ### POST /notes.json
 
-* Params: {"note"=>{"message"=>nil}, "format"=>"json", "controller"=>"notes", "action"=>"create"}
-* Response Status: 422
-* Response: {"errors":{"status":["can't be blank"],"message":["can't be blank"],"user":["can't be blank"]}} 
+* Params: {"note"=>{"status"=>"Rescheduled", "message"=>"Game is rescheduled for tomorrow", "user_id"=>7}, "format"=>"json", "controller"=>"notes", "action"=>"create"}
+* Response Status: 201
+* Response: {"note":{"id":3,"status":"Rescheduled","message":"Game is rescheduled for tomorrow","team":{"id":6,"name":"farmbureau"},"user":{"id":7,"email":"farmer@farmbureau.com"}}} 
 
 ### POST /notes.json
 
@@ -18,25 +18,31 @@
 
 ### POST /notes.json
 
-* Params: {"note"=>{"status"=>"Canceled", "message"=>"Game is delayed 1 hour", "user_id"=>4}, "format"=>"json", "controller"=>"notes", "action"=>"create"}
-* Response Status: 201
-* Response: {"note":{"id":3,"status":"Canceled","message":"Game is delayed 1 hour","team":{"id":4,"name":"smashingboxes"},"user":{"id":4,"email":"ian@smashingboxes.com"}}} 
+* Params: {"note"=>{"message"=>nil}, "format"=>"json", "controller"=>"notes", "action"=>"create"}
+* Response Status: 422
+* Response: {"errors":{"status":["can't be blank"],"message":["can't be blank"],"user":["can't be blank"]}} 
 
-### GET /notes/1.json
+### GET /notes/2.json
 
-* Params: {"id"=>"1", "format"=>"json", "controller"=>"notes", "action"=>"show"}
+* Params: {"id"=>"2", "format"=>"json", "controller"=>"notes", "action"=>"show"}
 * Response Status: 200
-* Response: {"note":{"id":1,"status":"Rescheduled","message":"Game is delayed 1 hour","team":{"id":2,"name":"smashingboxes"},"user":{"id":2,"email":"ian@smashingboxes.com"}}} 
+* Response: {"note":{"id":2,"status":"Canceled","message":"Game is rescheduled for tomorrow","team":{"id":5,"name":"farmbureau"},"user":{"id":6,"email":"farmer@farmbureau.com"}}} 
 
 ### GET /users.json
 
-* Params: {"user"=>{"email"=>"farmer@farmbureau.com"}, "format"=>"json", "controller"=>"users", "action"=>"find_or_create"}
+* Params: {"user"=>{"email"=>"new_user@team.com"}, "format"=>"json", "controller"=>"users", "action"=>"find_or_create"}
 * Response Status: 200
-* Response: {"user":{"id":5,"email":"farmer@farmbureau.com","team":{"id":5,"name":"farmbureau"},"notes":[]}} 
+* Response: {"user":{"id":4,"email":"new_user@team.com","team":{"id":3,"name":"farmbureau"},"notes":[]}} 
 
 ### GET /users.json
 
 * Params: {"user"=>{"email"=>"ian@smashingboxes.com"}, "format"=>"json", "controller"=>"users", "action"=>"find_or_create"}
 * Response Status: 200
-* Response: {"user":{"id":6,"email":"ian@smashingboxes.com","team":{"id":6,"name":"smashingboxes"},"notes":[]}} 
+* Response: {"user":{"id":5,"email":"ian@smashingboxes.com","team":{"id":4,"name":"smashingboxes"},"notes":[]}} 
+
+### GET /users.json
+
+* Params: {"user"=>{"email"=>"farmer@farmbureau.com"}, "format"=>"json", "controller"=>"users", "action"=>"find_or_create"}
+* Response Status: 200
+* Response: {"user":{"id":2,"email":"farmer@farmbureau.com","team":{"id":2,"name":"farmbureau"},"notes":[]}} 
 

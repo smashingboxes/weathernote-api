@@ -13,6 +13,6 @@ class User < ActiveRecord::Base
 
   def assign_team
     team_name = self.email.split("@").last.slice(/.*\./).chop
-    self.team = Team.first_or_create(name: team_name)
+    self.team = Team.find_or_create_by(name: team_name)
   end
 end
